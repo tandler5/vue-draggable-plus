@@ -294,6 +294,9 @@ export function useDraggable<T>(...args: any[]): UseDraggableReturn {
     if (instance) methods.destroy()
 
     instance = new Sortable(target as HTMLElement, mergeOptions())
+    if (options._appendGhost) {
+      instance._appendGhost = options._appendGhost
+    }
   }
 
   watch(
