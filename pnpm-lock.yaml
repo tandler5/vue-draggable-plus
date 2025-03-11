@@ -64,8 +64,8 @@ importers:
         specifier: ^2.8.8
         version: 2.8.8
       sortablejs:
-        specifier: ^1.15.2
-        version: 1.15.2
+        specifier: github:tandler5/Sortable
+        version: https://codeload.github.com/tandler5/Sortable/tar.gz/e6a1b0e17ca3d00b78cd57c99f5ff80956a8fbb0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -80,7 +80,7 @@ importers:
         version: 1.7.3(@types/node@20.12.13)(rollup@4.18.0)(vite@5.2.12(@types/node@20.12.13))
       vitepress:
         specifier: 1.0.0-rc.44
-        version: 1.0.0-rc.44(@algolia/client-search@4.23.3)(@types/node@20.12.13)(postcss@8.4.38)(search-insights@2.14.0)(sortablejs@1.15.2)(typescript@5.4.5)
+        version: 1.0.0-rc.44(@algolia/client-search@4.23.3)(@types/node@20.12.13)(postcss@8.4.38)(search-insights@2.14.0)(sortablejs@https://codeload.github.com/tandler5/Sortable/tar.gz/e6a1b0e17ca3d00b78cd57c99f5ff80956a8fbb0)(typescript@5.4.5)
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
@@ -1022,6 +1022,7 @@ packages:
 
   '@vueuse/integrations@10.10.0':
     resolution: {integrity: sha512-vHGeK7X6mkdkpcm1eE9t3Cpm21pNVfZRwrjwwbrEs9XftnSgszF4831G2rei8Dt9cIYJIfFV+iyx/29muimJPQ==}
+    version: 10.10.0
     peerDependencies:
       async-validator: '*'
       axios: '*'
@@ -3189,8 +3190,9 @@ packages:
     resolution: {integrity: sha512-up04hB2hR92PgjpyU3y/eg91yIBILyjVY26NvvciY3EVVPjybkMszMpXQ9QAkcS3I5rtJBDLoTxxg+qvW8c7rw==}
     engines: {node: '>=0.10.0'}
 
-  sortablejs@1.15.2:
-    resolution: {integrity: sha512-FJF5jgdfvoKn1MAKSdGs33bIqLi3LmsgVTliuX6iITj834F+JRQZN90Z93yql8h0K2t0RwDPBmxwlbZfDcxNZA==}
+  sortablejs@https://codeload.github.com/tandler5/Sortable/tar.gz/e6a1b0e17ca3d00b78cd57c99f5ff80956a8fbb0:
+    resolution: {tarball: https://codeload.github.com/tandler5/Sortable/tar.gz/e6a1b0e17ca3d00b78cd57c99f5ff80956a8fbb0}
+    version: 1.15.6
 
   source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
@@ -3580,6 +3582,7 @@ packages:
 
   vitepress@1.0.0-rc.44:
     resolution: {integrity: sha512-tO5taxGI7fSpBK1D8zrZTyJJERlyU9nnt0jHSt3fywfq3VKn977Hg0wUuTkEmwXlFYwuW26+6+3xorf4nD3XvA==}
+    version: 1.0.0-rc.44
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4.3.2
@@ -4828,14 +4831,14 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@vueuse/integrations@10.10.0(focus-trap@7.5.4)(sortablejs@1.15.2)(vue@3.4.27(typescript@5.4.5))':
+  '@vueuse/integrations@10.10.0(focus-trap@7.5.4)(sortablejs@https://codeload.github.com/tandler5/Sortable/tar.gz/e6a1b0e17ca3d00b78cd57c99f5ff80956a8fbb0)(vue@3.4.27(typescript@5.4.5))':
     dependencies:
       '@vueuse/core': 10.10.0(vue@3.4.27(typescript@5.4.5))
       '@vueuse/shared': 10.10.0(vue@3.4.27(typescript@5.4.5))
       vue-demi: 0.14.7(vue@3.4.27(typescript@5.4.5))
     optionalDependencies:
       focus-trap: 7.5.4
-      sortablejs: 1.15.2
+      sortablejs: https://codeload.github.com/tandler5/Sortable/tar.gz/e6a1b0e17ca3d00b78cd57c99f5ff80956a8fbb0
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -7130,7 +7133,7 @@ snapshots:
 
   slice-ansi@0.0.4: {}
 
-  sortablejs@1.15.2: {}
+  sortablejs@https://codeload.github.com/tandler5/Sortable/tar.gz/e6a1b0e17ca3d00b78cd57c99f5ff80956a8fbb0: {}
 
   source-map-js@1.2.0: {}
 
@@ -7527,7 +7530,7 @@ snapshots:
       - terser
       - typescript
 
-  vitepress@1.0.0-rc.44(@algolia/client-search@4.23.3)(@types/node@20.12.13)(postcss@8.4.38)(search-insights@2.14.0)(sortablejs@1.15.2)(typescript@5.4.5):
+  vitepress@1.0.0-rc.44(@algolia/client-search@4.23.3)(@types/node@20.12.13)(postcss@8.4.38)(search-insights@2.14.0)(sortablejs@https://codeload.github.com/tandler5/Sortable/tar.gz/e6a1b0e17ca3d00b78cd57c99f5ff80956a8fbb0)(typescript@5.4.5):
     dependencies:
       '@docsearch/css': 3.6.0
       '@docsearch/js': 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)
@@ -7537,7 +7540,7 @@ snapshots:
       '@vitejs/plugin-vue': 5.0.4(vite@5.2.12(@types/node@20.12.13))(vue@3.4.27(typescript@5.4.5))
       '@vue/devtools-api': 7.2.1(vue@3.4.27(typescript@5.4.5))
       '@vueuse/core': 10.10.0(vue@3.4.27(typescript@5.4.5))
-      '@vueuse/integrations': 10.10.0(focus-trap@7.5.4)(sortablejs@1.15.2)(vue@3.4.27(typescript@5.4.5))
+      '@vueuse/integrations': 10.10.0(focus-trap@7.5.4)(sortablejs@https://codeload.github.com/tandler5/Sortable/tar.gz/e6a1b0e17ca3d00b78cd57c99f5ff80956a8fbb0)(vue@3.4.27(typescript@5.4.5))
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 6.3.0
