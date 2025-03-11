@@ -1482,7 +1482,7 @@ function tn(...t) {
   }
   const F = (v) => {
     var w;
-    v = k(v), a && A.destroy(), a = new p(v, H()), console.log(i.value), (w = i.value) != null && w._appendGhost && (a._appendGhost = i.value._appendGhost);
+    v = k(v), a && A.destroy(), a = new p(v, H()), console.log(a), console.log(i.value), (w = i.value) != null && w._appendGhost && (a._appendGhost = i.value._appendGhost);
   };
   an(
     () => i,
