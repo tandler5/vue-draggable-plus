@@ -1481,7 +1481,7 @@ function tn(...t) {
     );
   }
   const F = (v) => {
-    v = k(v), a && A.destroy(), a = new p(v, H()), i._appendGhost && (a._appendGhost = i._appendGhost);
+    v = k(v), a && A.destroy(), a = new p(v, H()), console.log(i), i._appendGhost && (a._appendGhost = i._appendGhost);
   };
   an(
     () => i,
