@@ -334,5 +334,5 @@ export function useDraggable<T>(...args: any[]): UseDraggableReturn {
 
   tryOnUnmounted(methods.destroy)
 
-  return { start, pause, resume, ...methods }
+  return { instance, start, pause, resume, ...methods }
 }
