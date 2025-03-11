@@ -1503,7 +1503,7 @@ function tn(...t) {
   }, L = () => A == null ? void 0 : A.option("disabled", !0), ne = () => A == null ? void 0 : A.option("disabled", !1);
   return to(() => {
     l && F();
-  }), eo(A.destroy), fe({ instance: a, start: F, pause: L, resume: ne }, A);
+  }), eo(A.destroy), fe({ start: F, pause: L, resume: ne }, A);
 }
 const ct = [
   "update",
