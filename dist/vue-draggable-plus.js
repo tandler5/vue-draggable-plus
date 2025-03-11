@@ -230,7 +230,7 @@ function ye(t, e) {
   var r = window.DOMMatrix || window.WebKitCSSMatrix || window.CSSMatrix || window.MSCSSMatrix;
   return r && new r(n);
 }
-function Gt(t, e, n) {
+function Wt(t, e, n) {
   if (t) {
     var o = t.getElementsByTagName(e), r = 0, i = o.length;
     if (n)
@@ -350,7 +350,7 @@ function Ke(t, e) {
   return Math.round(t.top) === Math.round(e.top) && Math.round(t.left) === Math.round(e.left) && Math.round(t.height) === Math.round(e.height) && Math.round(t.width) === Math.round(e.width);
 }
 var Te;
-function Wt(t, e) {
+function Gt(t, e) {
   return function() {
     if (!Te) {
       var n = arguments, o = this;
@@ -511,7 +511,7 @@ function Bn(t) {
     n && n.dispatchEvent(E), k[H] && k[H].call(e, E);
   }
 }
-var kn = ["evt"], W = function(e, n) {
+var kn = ["evt"], G = function(e, n) {
   var o = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {}, r = o.evt, i = An(o, kn);
   xe.pluginEvent.bind(p)(e, n, te({
     dragEl: c,
@@ -539,7 +539,7 @@ var kn = ["evt"], W = function(e, n) {
       se = !1;
     },
     dispatchSortableEvent: function(l) {
-      G({
+      W({
         sortable: n,
         name: l,
         originalEvent: r
@@ -547,7 +547,7 @@ var kn = ["evt"], W = function(e, n) {
     }
   }, i));
 };
-function G(t) {
+function W(t) {
   Bn(te({
     putSortable: X,
     cloneEl: O,
@@ -559,7 +559,7 @@ function G(t) {
     newDraggableIndex: le
   }, t));
 }
-var c, I, g, C, pe, Ye, O, se, be, $, Ce, le, Pe, X, ve = !1, Ge = !1, We = [], de, J, Ze, Qe, xt, Nt, Ee, me, Oe, Ie = !1, Me = !1, Be, B, et = [], at = !1, je = [], Ue = typeof document != "undefined", Fe = kt, Pt = Ae || ie ? "cssFloat" : "float", Hn = Ue && !Ht && !kt && "draggable" in document.createElement("div"), Vt = function() {
+var c, I, g, C, pe, Ye, O, se, be, $, Ce, le, Pe, X, ve = !1, We = !1, Ge = [], de, J, Ze, Qe, xt, Nt, Ee, me, Oe, Ie = !1, Me = !1, Be, B, et = [], at = !1, je = [], Ue = typeof document != "undefined", Fe = kt, Pt = Ae || ie ? "cssFloat" : "float", Hn = Ue && !Ht && !kt && "draggable" in document.createElement("div"), Vt = function() {
   if (Ue) {
     if (ie)
       return !1;
@@ -580,9 +580,9 @@ var c, I, g, C, pe, Ye, O, se, be, $, Ce, le, Pe, X, ve = !1, Ge = !1, We = [], 
 }, Ln = function(e, n, o) {
   var r = o ? e.left : e.top, i = o ? e.right : e.bottom, a = o ? e.width : e.height, l = o ? n.left : n.top, s = o ? n.right : n.bottom, u = o ? n.width : n.height;
   return r === l || i === s || r + a / 2 === l + u / 2;
-}, Gn = function(e, n) {
+}, Wn = function(e, n) {
   var o;
-  return We.some(function(r) {
+  return Ge.some(function(r) {
     var i = r[q].options.emptyInsertThreshold;
     if (!(!i || dt(r))) {
       var a = M(r), l = e >= a.left - i && e <= a.right + i, s = n >= a.top - i && n <= a.bottom + i;
@@ -616,13 +616,13 @@ var c, I, g, C, pe, Ye, O, se, be, $, Ce, le, Pe, X, ve = !1, Ge = !1, We = [], 
   !Vt && g && h(g, "display", "");
 };
 Ue && !Ht && document.addEventListener("click", function(t) {
-  if (Ge)
-    return t.preventDefault(), t.stopPropagation && t.stopPropagation(), t.stopImmediatePropagation && t.stopImmediatePropagation(), Ge = !1, !1;
+  if (We)
+    return t.preventDefault(), t.stopPropagation && t.stopPropagation(), t.stopImmediatePropagation && t.stopImmediatePropagation(), We = !1, !1;
 }, !0);
 var he = function(e) {
   if (c) {
     e = e.touches ? e.touches[0] : e;
-    var n = Gn(e.clientX, e.clientY);
+    var n = Wn(e.clientX, e.clientY);
     if (n) {
       var o = {};
       for (var r in e)
@@ -630,7 +630,7 @@ var he = function(e) {
       o.target = o.rootEl = n, o.preventDefault = void 0, o.stopPropagation = void 0, n[q]._onDragOver(o);
     }
   }
-}, Wn = function(e) {
+}, Gn = function(e) {
   c && c.parentNode[q]._isOutsideThisEl(e.target);
 };
 function p(t, e) {
@@ -688,7 +688,7 @@ function p(t, e) {
   qt(e);
   for (var r in this)
     r.charAt(0) === "_" && typeof this[r] == "function" && (this[r] = this[r].bind(this));
-  this.nativeDraggable = e.forceFallback ? !1 : Hn, this.nativeDraggable && (this.options.touchStartThreshold = 1), e.supportPointer ? D(t, "pointerdown", this._onTapStart) : (D(t, "mousedown", this._onTapStart), D(t, "touchstart", this._onTapStart)), this.nativeDraggable && (D(t, "dragover", this), D(t, "dragenter", this)), We.push(this.el), e.store && e.store.get && this.sort(e.store.get(this) || []), re(this, Rn());
+  this.nativeDraggable = e.forceFallback ? !1 : Hn, this.nativeDraggable && (this.options.touchStartThreshold = 1), e.supportPointer ? D(t, "pointerdown", this._onTapStart) : (D(t, "mousedown", this._onTapStart), D(t, "touchstart", this._onTapStart)), this.nativeDraggable && (D(t, "dragover", this), D(t, "dragenter", this)), Ge.push(this.el), e.store && e.store.get && this.sort(e.store.get(this) || []), re(this, Rn());
 }
 p.prototype = /** @lends Sortable.prototype */
 {
@@ -705,28 +705,28 @@ p.prototype = /** @lends Sortable.prototype */
       if (Jn(o), !c && !(/mousedown|pointerdown/.test(a) && e.button !== 0 || r.disabled) && !u.isContentEditable && !(!this.nativeDraggable && _e && s && s.tagName.toUpperCase() === "SELECT") && (s = Z(s, r.draggable, o, !1), !(s && s.animated) && Ye !== s)) {
         if (be = K(s), Ce = K(s, r.draggable), typeof d == "function") {
           if (d.call(this, e, s, this)) {
-            G({
+            W({
               sortable: n,
               rootEl: u,
               name: "filter",
               targetEl: s,
               toEl: o,
               fromEl: o
-            }), W("filter", n, {
+            }), G("filter", n, {
               evt: e
             }), i && e.cancelable && e.preventDefault();
             return;
           }
         } else if (d && (d = d.split(",").some(function(f) {
           if (f = Z(u, f.trim(), o, !1), f)
-            return G({
+            return W({
               sortable: n,
               rootEl: f,
               name: "filter",
               targetEl: s,
               fromEl: o,
               toEl: o
-            }), W("filter", n, {
+            }), G("filter", n, {
               evt: e
             }), !0;
         }), d)) {
@@ -746,20 +746,20 @@ p.prototype = /** @lends Sortable.prototype */
         clientX: (n || e).clientX,
         clientY: (n || e).clientY
       }, xt = de.clientX - u.left, Nt = de.clientY - u.top, this._lastX = (n || e).clientX, this._lastY = (n || e).clientY, c.style["will-change"] = "all", s = function() {
-        if (W("delayEnded", r, {
+        if (G("delayEnded", r, {
           evt: e
         }), p.eventCanceled) {
           r._onDrop();
           return;
         }
-        r._disableDelayedDragEvents(), !Ct && r.nativeDraggable && (c.draggable = !0), r._triggerDragStart(e, n), G({
+        r._disableDelayedDragEvents(), !Ct && r.nativeDraggable && (c.draggable = !0), r._triggerDragStart(e, n), W({
           sortable: r,
           name: "choose",
           originalEvent: e
         }), V(c, a.chosenClass, !0);
       }, a.ignore.split(",").forEach(function(d) {
-        Gt(c, d.trim(), tt);
-      }), D(l, "dragover", he), D(l, "mousemove", he), D(l, "touchmove", he), D(l, "mouseup", r._onDrop), D(l, "touchend", r._onDrop), D(l, "touchcancel", r._onDrop), Ct && this.nativeDraggable && (this.options.touchStartThreshold = 4, c.draggable = !0), W("delayStart", this, {
+        Wt(c, d.trim(), tt);
+      }), D(l, "dragover", he), D(l, "mousemove", he), D(l, "touchmove", he), D(l, "mouseup", r._onDrop), D(l, "touchend", r._onDrop), D(l, "touchcancel", r._onDrop), Ct && this.nativeDraggable && (this.options.touchStartThreshold = 4, c.draggable = !0), G("delayStart", this, {
         evt: e
       }), a.delay && (!a.delayOnTouchOnly || n) && (!this.nativeDraggable || !(Ae || ie))) {
         if (p.eventCanceled) {
@@ -793,11 +793,11 @@ p.prototype = /** @lends Sortable.prototype */
   },
   _dragStarted: function(e, n) {
     if (ve = !1, C && c) {
-      W("dragStarted", this, {
+      G("dragStarted", this, {
         evt: n
-      }), this.nativeDraggable && D(document, "dragover", Wn);
+      }), this.nativeDraggable && D(document, "dragover", Gn);
       var o = this.options;
-      !e && V(c, o.dragClass, !1), V(c, o.ghostClass, !0), p.active = this, e && this._appendGhost(), G({
+      !e && V(c, o.dragClass, !1), V(c, o.ghostClass, !0), p.active = this, e && this._appendGhost(), W({
         sortable: this,
         name: "start",
         originalEvent: n
@@ -863,18 +863,18 @@ p.prototype = /** @lends Sortable.prototype */
   },
   _onDragStart: function(e, n) {
     var o = this, r = e.dataTransfer, i = o.options;
-    if (W("dragStart", this, {
+    if (G("dragStart", this, {
       evt: e
     }), p.eventCanceled) {
       this._onDrop();
       return;
     }
-    W("setupClone", this), p.eventCanceled || (O = zt(c), O.removeAttribute("id"), O.draggable = !1, O.style["will-change"] = "", this._hideClone(), V(O, this.options.chosenClass, !1), p.clone = O), o.cloneId = ke(function() {
-      W("clone", o), !p.eventCanceled && (o.options.removeCloneOnHide || C.insertBefore(O, c), o._hideClone(), G({
+    G("setupClone", this), p.eventCanceled || (O = zt(c), O.removeAttribute("id"), O.draggable = !1, O.style["will-change"] = "", this._hideClone(), V(O, this.options.chosenClass, !1), p.clone = O), o.cloneId = ke(function() {
+      G("clone", o), !p.eventCanceled && (o.options.removeCloneOnHide || C.insertBefore(O, c), o._hideClone(), W({
         sortable: o,
         name: "clone"
       }));
-    }), !n && V(c, i.dragClass, !0), n ? (Ge = !0, o._loopId = setInterval(o._emulateDragOver, 50)) : (S(document, "mouseup", o._onDrop), S(document, "touchend", o._onDrop), S(document, "touchcancel", o._onDrop), r && (r.effectAllowed = "move", i.setData && i.setData.call(o, r, c)), D(document, "drop", o), h(c, "transform", "translateZ(0)")), ve = !0, o._dragStartId = ke(o._dragStarted.bind(o, n, e)), D(document, "selectstart", o), Ee = !0, _e && h(document.body, "user-select", "none");
+    }), !n && V(c, i.dragClass, !0), n ? (We = !0, o._loopId = setInterval(o._emulateDragOver, 50)) : (S(document, "mouseup", o._onDrop), S(document, "touchend", o._onDrop), S(document, "touchcancel", o._onDrop), r && (r.effectAllowed = "move", i.setData && i.setData.call(o, r, c)), D(document, "drop", o), h(c, "transform", "translateZ(0)")), ve = !0, o._dragStartId = ke(o._dragStarted.bind(o, n, e)), D(document, "selectstart", o), Ee = !0, _e && h(document.body, "user-select", "none");
   },
   // Returns true - if no further action is needed (either inserted or another condition)
   _onDragOver: function(e) {
@@ -882,7 +882,7 @@ p.prototype = /** @lends Sortable.prototype */
     if (at)
       return;
     function k(ce, nn) {
-      W(ce, b, te({
+      G(ce, b, te({
         evt: e,
         isOwner: d,
         axis: y ? "vertical" : "horizontal",
@@ -910,7 +910,7 @@ p.prototype = /** @lends Sortable.prototype */
       }), b !== m && (m.animateAll(), m._ignoreWhileAnimating = null)), (o === c && !c.animated || o === n && !o.animated) && (me = null), !l.dragoverBubble && !e.rootEl && o !== document && (c.parentNode[q]._isOutsideThisEl(e.target), !ce && he(e)), !l.dragoverBubble && e.stopPropagation && e.stopPropagation(), E = !0;
     }
     function A() {
-      $ = K(c), le = K(c, l.draggable), G({
+      $ = K(c), le = K(c, l.draggable), W({
         sortable: b,
         name: "change",
         toEl: n,
@@ -923,7 +923,7 @@ p.prototype = /** @lends Sortable.prototype */
       return E;
     if (c.contains(e.target) || o.animated && o.animatingX && o.animatingY || b._ignoreWhileAnimating === o)
       return F(!1);
-    if (Ge = !1, u && !l.disabled && (d ? f || (a = I !== C) : X === this || (this.lastPutMode = Pe.checkPull(this, u, c, e)) && s.checkPut(this, u, c, e))) {
+    if (We = !1, u && !l.disabled && (d ? f || (a = I !== C) : X === this || (this.lastPutMode = Pe.checkPull(this, u, c, e)) && s.checkPut(this, u, c, e))) {
       if (y = this._getDirection(e, o) === "vertical", r = M(c), k("dragOverValid"), p.eventCanceled)
         return E;
       if (a)
@@ -975,52 +975,52 @@ p.prototype = /** @lends Sortable.prototype */
   },
   _onDrop: function(e) {
     var n = this.el, o = this.options;
-    if ($ = K(c), le = K(c, o.draggable), W("drop", this, {
+    if ($ = K(c), le = K(c, o.draggable), G("drop", this, {
       evt: e
     }), I = c && c.parentNode, $ = K(c), le = K(c, o.draggable), p.eventCanceled) {
       this._nulling();
       return;
     }
-    ve = !1, Me = !1, Ie = !1, clearInterval(this._loopId), clearTimeout(this._dragStartTimer), lt(this.cloneId), lt(this._dragStartId), this.nativeDraggable && (S(document, "drop", this), S(n, "dragstart", this._onDragStart)), this._offMoveEvents(), this._offUpEvents(), _e && h(document.body, "user-select", ""), h(c, "transform", ""), e && (Ee && (e.cancelable && e.preventDefault(), !o.dropBubble && e.stopPropagation()), g && g.parentNode && g.parentNode.removeChild(g), (C === I || X && X.lastPutMode !== "clone") && O && O.parentNode && O.parentNode.removeChild(O), c && (this.nativeDraggable && S(c, "dragend", this), tt(c), c.style["will-change"] = "", Ee && !ve && V(c, X ? X.options.ghostClass : this.options.ghostClass, !1), V(c, this.options.chosenClass, !1), G({
+    ve = !1, Me = !1, Ie = !1, clearInterval(this._loopId), clearTimeout(this._dragStartTimer), lt(this.cloneId), lt(this._dragStartId), this.nativeDraggable && (S(document, "drop", this), S(n, "dragstart", this._onDragStart)), this._offMoveEvents(), this._offUpEvents(), _e && h(document.body, "user-select", ""), h(c, "transform", ""), e && (Ee && (e.cancelable && e.preventDefault(), !o.dropBubble && e.stopPropagation()), g && g.parentNode && g.parentNode.removeChild(g), (C === I || X && X.lastPutMode !== "clone") && O && O.parentNode && O.parentNode.removeChild(O), c && (this.nativeDraggable && S(c, "dragend", this), tt(c), c.style["will-change"] = "", Ee && !ve && V(c, X ? X.options.ghostClass : this.options.ghostClass, !1), V(c, this.options.chosenClass, !1), W({
       sortable: this,
       name: "unchoose",
       toEl: I,
       newIndex: null,
       newDraggableIndex: null,
       originalEvent: e
-    }), C !== I ? ($ >= 0 && (G({
+    }), C !== I ? ($ >= 0 && (W({
       rootEl: I,
       name: "add",
       toEl: I,
       fromEl: C,
       originalEvent: e
-    }), G({
+    }), W({
       sortable: this,
       name: "remove",
       toEl: I,
       originalEvent: e
-    }), G({
+    }), W({
       rootEl: I,
       name: "sort",
       toEl: I,
       fromEl: C,
       originalEvent: e
-    }), G({
+    }), W({
       sortable: this,
       name: "sort",
       toEl: I,
       originalEvent: e
-    })), X && X.save()) : $ !== be && $ >= 0 && (G({
+    })), X && X.save()) : $ !== be && $ >= 0 && (W({
       sortable: this,
       name: "update",
       toEl: I,
       originalEvent: e
-    }), G({
+    }), W({
       sortable: this,
       name: "sort",
       toEl: I,
       originalEvent: e
-    })), p.active && (($ == null || $ === -1) && ($ = be, le = Ce), G({
+    })), p.active && (($ == null || $ === -1) && ($ = be, le = Ce), W({
       sortable: this,
       name: "end",
       toEl: I,
@@ -1028,7 +1028,7 @@ p.prototype = /** @lends Sortable.prototype */
     }), this.save()))), this._nulling();
   },
   _nulling: function() {
-    W("nulling", this), C = c = I = g = pe = O = Ye = se = de = J = Ee = $ = le = be = Ce = me = Oe = X = Pe = p.dragged = p.ghost = p.clone = p.active = null, je.forEach(function(e) {
+    G("nulling", this), C = c = I = g = pe = O = Ye = se = de = J = Ee = $ = le = be = Ce = me = Oe = X = Pe = p.dragged = p.ghost = p.clone = p.active = null, je.forEach(function(e) {
       e.checked = !0;
     }), je.length = Ze = Qe = 0;
   },
@@ -1102,15 +1102,15 @@ p.prototype = /** @lends Sortable.prototype */
    * Destroy
    */
   destroy: function() {
-    W("destroy", this);
+    G("destroy", this);
     var e = this.el;
     e[q] = null, S(e, "mousedown", this._onTapStart), S(e, "touchstart", this._onTapStart), S(e, "pointerdown", this._onTapStart), this.nativeDraggable && (S(e, "dragover", this), S(e, "dragenter", this)), Array.prototype.forEach.call(e.querySelectorAll("[draggable]"), function(n) {
       n.removeAttribute("draggable");
-    }), this._onDrop(), this._disableDelayedDragEvents(), We.splice(We.indexOf(this.el), 1), this.el = e = null;
+    }), this._onDrop(), this._disableDelayedDragEvents(), Ge.splice(Ge.indexOf(this.el), 1), this.el = e = null;
   },
   _hideClone: function() {
     if (!se) {
-      if (W("hideClone", this), p.eventCanceled)
+      if (G("hideClone", this), p.eventCanceled)
         return;
       h(O, "display", "none"), this.options.removeCloneOnHide && O.parentNode && O.parentNode.removeChild(O), se = !0;
     }
@@ -1121,7 +1121,7 @@ p.prototype = /** @lends Sortable.prototype */
       return;
     }
     if (se) {
-      if (W("showClone", this), p.eventCanceled)
+      if (G("showClone", this), p.eventCanceled)
         return;
       c.parentNode == C && !this.options.group.revertClone ? C.insertBefore(O, c) : pe ? C.insertBefore(O, pe) : C.appendChild(O), this.options.group.revertClone && this.animate(c, O), h(O, "display", ""), se = !1;
     }
@@ -1192,12 +1192,12 @@ p.utils = {
   on: D,
   off: S,
   css: h,
-  find: Gt,
+  find: Wt,
   is: function(e, n) {
     return !!Z(e, n, e, !1);
   },
   extend: Mn,
-  throttle: Wt,
+  throttle: Gt,
   closest: Z,
   toggleClass: V,
   clone: zt,
@@ -1284,7 +1284,7 @@ function He() {
 function Mt() {
   clearInterval(De);
 }
-var rt = Wt(function(t, e, n, o) {
+var rt = Gt(function(t, e, n, o) {
   if (e.scroll) {
     var r = (t.touches ? t.touches[0] : t).clientX, i = (t.touches ? t.touches[0] : t).clientY, a = e.scrollSensitivity, l = e.scrollSpeed, s = ee(), u = !1, d;
     st !== n && (st = n, He(), Se = e.scroll, d = e.scrollFn, Se === !0 && (Se = ue(n, !0)));
@@ -1481,7 +1481,7 @@ function tn(...t) {
     );
   }
   const F = (v) => {
-    v = k(v), a && A.destroy(), a = new p(v, H()), console.log(a._appendGhost), console.log(a._appendGhost());
+    v = k(v), a && A.destroy(), a = new p(v, H());
   };
   an(
     () => i,
