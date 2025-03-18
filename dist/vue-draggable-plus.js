@@ -1366,6 +1366,7 @@ function no() {
     pluginName: "debounce"
   });
 }
+h.mount(new no());
 function oo(t) {
   return t == null ? t : JSON.parse(JSON.stringify(t));
 }
@@ -1495,7 +1496,7 @@ function an(...t) {
     );
   }
   const F = (v) => {
-    v = B(v), a && A.destroy(), h.mount(new no()), a = new h(v, H());
+    v = B(v), a && A.destroy(), a = new h(v, H());
   };
   cn(
     () => i,
