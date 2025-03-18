@@ -1,4 +1,5 @@
 import Sortable, { type Options, type SortableEvent } from 'sortablejs'
+import { DebouncePlugin } from './plugins/debounce/main'
 import {
   getCurrentInstance,
   isRef,
@@ -293,6 +294,7 @@ export function useDraggable<T>(...args: any[]): UseDraggableReturn {
     target = getTarget(target)
     if (instance) methods.destroy()
 
+    Sortable.mount(new DebouncePlugin())
     instance = new Sortable(target as HTMLElement, mergeOptions())
   }
 
