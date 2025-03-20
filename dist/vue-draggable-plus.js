@@ -1420,11 +1420,11 @@ function an(...t) {
   }
   function m(v) {
     const { from: D, item: x, oldIndex: P, oldDraggableIndex: _, pullMode: T, clone: R } = v;
-    if (Ot(D, x, P), T === "clone") {
+    if (T === "clone") {
       Ze(R);
       return;
     }
-    if (Je(r)) {
+    if (Ot(D, x, P), Je(r)) {
       const Y = [...V(r)];
       r.value = Tt(Y, _);
       return;

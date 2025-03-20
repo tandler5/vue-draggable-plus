@@ -183,11 +183,15 @@ export function useDraggable<T>(...args: any[]): UseDraggableReturn {
    */
   function onRemove(evt: DraggableEvent) {
     const { from, item, oldIndex, oldDraggableIndex, pullMode, clone } = evt
-    insertNodeAt(from, item, oldIndex!)
+
     if (pullMode === 'clone') {
-      removeNode(clone)
+      removeNode(clone!)
       return
     }
+
+    // Only re-insert if not a clone operation
+    insertNodeAt(from, item, oldIndex!)
+
     if (isRef<any[]>(list)) {
       const newList = [...unref(list)]
       list.value = removeElement(newList, oldDraggableIndex!)
