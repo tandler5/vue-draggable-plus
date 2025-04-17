@@ -1,6 +1,7 @@
 let lastX = 0
 let lastY = 0
 let lastTime: Date | null = null
+let changeFired = false
 
 export default function DebouncePlugin() {
   function Debounce() {
@@ -28,14 +29,19 @@ export default function DebouncePlugin() {
         const currentTime = new Date()
         if (lastTime && currentTime - lastTime > options.debounceTimeout) {
           // culculate staying time. if overtime, complete.
-          changed()
-          completed(true)
+          if (!changeFired) {
+            changed()
+            completed(true)
+            changeFired = true
+          } else {
+            cancel()
+          }
         } else {
           cancel()
         }
         return
       }
-
+      changeFired = false
       lastX = originalEvent.screenX
       lastY = originalEvent.screenY
       lastTime = new Date()
